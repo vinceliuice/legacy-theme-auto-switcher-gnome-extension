@@ -1,8 +1,8 @@
 {
-  "name": "Legacy (GTK3) Theme Scheme Auto Switcher",
+  "name": "Legacy (GTK3) Vince Theme Scheme Auto Switcher",
   "description": "Change the GTK3 theme to light/dark variant based on the system color scheme",
-  "url": "https://github.com/mukul29/legacy-theme-auto-switcher-gnome-extension",
-  "uuid": "legacyschemeautoswitcher@joshimukul29.gmail.com",
+  "url": "https://github.com/vinceliuice/vince-theme-auto-switcher",
+  "uuid": "legacyschemeautoswitcher@vinceliuice.hotmail.com",
   "shell-version": [
     "45",
     "46",
