@@ -29,13 +29,22 @@ export default class LegacyThemeSchemeAutoSwitcher {
         {
             case DEFAULT_SCHEME_NAME:
             case LIGHT_SCHEME_NAME:
+                if (this.schema.get_string('gtk-theme').endsWith("-Dark")) {
+                    this.schema.set_string('gtk-theme', this.schema.get_string('gtk-theme').slice(0,-5) + "-Light");
+                }
                 if (this.schema.get_string('gtk-theme').endsWith("-dark")) {
                     this.schema.set_string('gtk-theme', this.schema.get_string('gtk-theme').slice(0,-5));
                 }
                 break;
             case DARK_SCHEME_NAME:
-                if (!this.schema.get_string('gtk-theme').endsWith("-dark")) {
-                    this.schema.set_string('gtk-theme', this.schema.get_string('gtk-theme') + "-dark");
+                if (this.schema.get_string('gtk-theme').endsWith("-Light")) {
+                    this.schema.set_string('gtk-theme', this.schema.get_string('gtk-theme').slice(0,-6) + "-Dark");
+                }
+                if (this.schema.get_string('gtk-theme').endsWith("-light")) {
+                    this.schema.set_string('gtk-theme', this.schema.get_string('gtk-theme').slice(0,-6) + "-dark");
+                }
+                if (!this.schema.get_string('gtk-theme').endsWith("-Dark")) {
+                    this.schema.set_string('gtk-theme', this.schema.get_string('gtk-theme') + "-Dark");
                 }
                 break;
             default:
